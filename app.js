@@ -8,6 +8,7 @@ const dotEnv = require('dotenv');
 
 //internal routes imports 
 const appointment = require("./routes/appointment");
+const dashboard = require("./routes/dashboard");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -20,6 +21,7 @@ mongoose.connect(process.env.DATABASE_CONNECTION_URI, {useNewUrlParser: true})
 .catch((err) => { console.log(err)});
 
 app.use("/appointment", appointment);
+app.use("/dashboard", dashboard);
 
 app.listen(process.env.PORT, (req, res) =>{
     console.log(`Server is runging  on port ${process.env.PORT}`);
