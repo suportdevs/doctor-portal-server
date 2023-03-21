@@ -21,6 +21,12 @@ const appointmentSchema = mongoose.Schema({
     age: {
         type: Number,
     },
+    service: {
+        type: String,
+    },
+    date: {
+        type: Date,
+    },
     wieght: {type: Number},
 }, {timestamps: true});
 

@@ -8,6 +8,6 @@ router.get('/hi', (req, res) => {
     res.json('hello server');
 });
 
-router.post('/', storeAppointment)
+router.post('/', storeAppointment);
 
 module.exports = router;
