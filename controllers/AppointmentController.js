@@ -13,8 +13,9 @@ async function storeAppointment(req, res){
 
 async function appointmentByDate(req, res){
     try{
-        console.log(req.body);
-        const data = await Appointment.find({date: req.body.date});
+        console.log(req.body.date.toString());
+        const date = req.body.date;
+        const data = await Appointment.find({date:{"$gte": date}});
         res.status(200).send(data);
     }catch(err){
         res.status(500).send({message: "Something went wrong.!" + err});
